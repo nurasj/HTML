@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+</head>
+<body>
+    <!-- Header for the login page (optional) -->
+    <header class="header">
+        <div class="logo-section">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Login form -->
+        <div class="login-box">
+            <h2>Авторизация</h2>
+
+            <!-- Display flashed message -->
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                <div class="alert">{{ messages[0] }}</div>
+              {% endif %}
+            {% endwith %}
+
+            <form method="POST" action="/">
+                <div class="input-field">
+                    <label for="username">Имя</label>
+                    <input type="text" id="username" name="username" placeholder="Имя" required>
+                </div>
+                <div class="input-field">
+                    <label for="password">Пароль</label>
+                    <input type="password" id="password" name="password" placeholder="Пароль" required>
+                    <span class="icon">🔒</span>
+                </div>
+                <button type="submit" class="btn">Авторизоваться</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

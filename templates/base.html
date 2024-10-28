@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Web App{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo-section">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
+        </div>
+
+        <nav class="navbar">
+            <ul class="menu">
+                <li class="dropdown">
+                    <a href="#">Cоздать</a>
+                    <div class="dropdown-content">
+                        <a href="#">создать ОН</a>
+                        <a href="#">назначить администратора</a>
+                    </div>
+                </li>
+                <li><a href="{{ url_for('users') }}">Пользователи</a></li>
+                <li><a href="#">Аналитика</a></li>
+                <li><a href="#">Мониторинг</a></li>
+            </ul>
+            
+            <!-- User Section with three-dot menu -->
+            <div class="user-section">
+                <span>имя пользователь</span>
+                <div class="dropdown user-dropdown">
+                    <ul class="dropbtn icons btn-right showLeft" onclick="showUserDropdown()">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <div id="userDropdown" class="dropdown-content">
+                        <a href="#">Admin</a>
+                        <li class="divider"></li>
+                        <a href="{{ url_for('login') }}">Exit</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Block -->
+    <main>
+        {% block content %}
+        <!-- Default content goes here if no block is provided in child templates -->
+        {% endblock %}
+    </main>
+
+    <script>
+        function showUserDropdown() {
+            document.getElementById("userDropdown").classList.toggle("show");
+        }
+
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

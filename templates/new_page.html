@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Register New User{% endblock %}
+
+{% block content %}
+<section class="register-section">
+    <h1>Добавить нового пользователя</h1>
+
+    <!-- Register Form -->
+    <form action="{{ url_for('register') }}" method="POST">
+        <!-- Cell Phone Number -->
+        <label for="phone">Номер телефона</label>
+        <input type="text" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+
+        <!-- Email -->
+        <label for="email">Электронная почта</label>
+        <input type="email" id="email" name="email" placeholder="Электронная почта" required>
+
+        <!-- Login -->
+        <label for="login">Логин</label>
+        <input type="text" id="login" name="login" placeholder="Логин" required>
+
+        <!-- Password -->
+        <label for="password">Пароль</label>
+        <input type="password" id="password" name="password" placeholder="Пароль" required>
+
+        <!-- Family Name, First Name, Surname in one line -->
+        <div class="name-fields">
+            <input type="text" id="family_name" name="family_name" placeholder="Фамилия" required>
+            <input type="text" id="first_name" name="first_name" placeholder="Имя" required>
+            <input type="text" id="surname" name="surname" placeholder="Отчество">
+        </div>
+
+        <!-- Submit button -->
+        <input type="submit" value="Отправить уведомление" class="btn-submit">
+    </form>
+</section>
+{% endblock %}

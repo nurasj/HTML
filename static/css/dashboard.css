@@ -1,0 +1,263 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    height: 100%;
+    width: 100%;
+}
+
+/* Header */
+.header {
+    width: 100%;
+    background-color: #fff;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.logo {
+    max-width: 160px;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 2;
+}
+
+.navbar .menu {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    position: relative;
+    margin-left: auto;
+}
+
+.navbar .menu a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .menu a:hover {
+    background-color: #e0e0e0;
+}
+
+/* Dropdown for "Создать" */
+.navbar .dropdown {
+    position: relative;
+}
+
+.navbar .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* Ensures it appears below the link */
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 8px;
+    margin-right: 5px;
+}
+
+.navbar .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: black;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* User Section - Three-dot Menu */
+.user-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+    position: relative;
+}
+
+.user-section span {
+    font-weight: 500;
+    margin-right: 10px;
+    color: #333;
+}
+
+.icons li {
+    background-color: #333;
+    height: 7px;
+    width: 7px;
+    border-radius: 50%;
+    list-style: none;
+    margin-right: 5px;
+}
+
+.dropbtn {
+    cursor: pointer;
+    display: flex;
+    padding: 10px;
+    border: none;
+    background: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    right: 0;
+    top: 30px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    color: black;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Analytics Section */
+.analytics-section {
+    margin: 120px auto;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.analytics-block {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .navbar .menu {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .block-data {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Button for adding new users */
+.add-button-section {
+    margin-top: 20px;
+}
+
+.add-button-section .btn {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin-left: 10px;
+}
+
+.add-button-section .btn:hover {
+    background-color: #f1f1f1;
+}
+
+/* Style the register section */
+.register-section {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.register-section h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.register-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.register-section input[type="text"],
+.register-section input[type="email"],
+.register-section input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Style the name fields in a row */
+.name-fields {
+    display: flex;
+    gap: 10px;
+}
+
+.name-fields input {
+    flex: 1;
+}
+
+/* Submit button */
+.btn-submit {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-submit:hover {
+    background-color: #45a049;
+}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Пользователи{% endblock %}
+
+{% block content %}
+<section class="user-section-content">
+    <h1>Пользователи</h1>
+    <!-- Add Button -->
+    <div class="add-button-section">
+        <a href="{{ url_for('new_page') }}" class="btn">добавить</a>
+    </div>
+</section>
+{% endblock %}

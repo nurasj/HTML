@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<section class="analytics-section">
+    <div class="analytics-block">
+        <div class="block-header">
+            <h3>Название объекта</h3>
+            <p>Город, Район, Улица, здание</p>
+        </div>
+        <div class="block-data">
+            <div class="data">
+                <span class="value">103</span>
+                <span class="label">Пользователей</span>
+            </div>
+            <div class="data">
+                <span class="value">10</span>
+                <span class="label">Организаций</span>
+            </div>
+            <div class="data">
+                <span class="value">2 345</span>
+                <span class="label">Посещений</span>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
