@@ -3,7 +3,8 @@ import pandas as pd
 
 
 app = Flask(__name__)
-app.secret_key = 'supersecretkey'  # Required for flashing messages
+# Required for flashing messages
+app.secret_key = 'supersecretkey'
 
 # Hardcoded login credentials
 USERNAME = 'admin'
