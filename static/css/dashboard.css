@@ -58,6 +58,13 @@ body, html {
     transition: background-color 0.3s ease;
 }
 
+/* Highlight the active navbar item */
+.navbar .menu a.active {
+    font-weight: bold;
+    border-bottom: 2px solid #4CAF50;
+    color: #4CAF50;
+}
+
 .navbar .menu a:hover {
     background-color: #e0e0e0;
 }

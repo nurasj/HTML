@@ -40,6 +40,14 @@ def logout():
 def dashboard():
     return render_template('dashboard.html')
 
+@app.route('/analytics', methods=['GET'])
+def analytics():
+    return render_template('analytics.html')
+
+@app.route('/monitoring', methods=['GET'])
+def monitoring():
+    return render_template('monitoring.html')
+
 # Route for the users page
 @app.route('/users', methods=['GET'])
 def users():

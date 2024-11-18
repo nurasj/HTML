@@ -16,16 +16,37 @@
 
         <nav class="navbar">
             <ul class="menu">
-                <li class="dropdown">
-                    <a href="#">Cоздать</a>
-                    <div class="dropdown-content">
-                        <a href="#">создать ОН</a>
-                        <a href="#">назначить администратора</a>
-                    </div>
+                <!-- Dashboard -->
+                <li>
+                    <a href="{{ url_for('dashboard') }}" 
+                       class="{% if request.path == '/dashboard' %}active{% endif %}">
+                        Создать
+                    </a>
                 </li>
-                <li><a href="{{ url_for('users') }}">Пользователи</a></li>
-                <li><a href="#">Аналитика</a></li>
-                <li><a href="#">Мониторинг</a></li>
+        
+                <!-- Users -->
+                <li>
+                    <a href="{{ url_for('users') }}" 
+                       class="{% if request.path == '/users' %}active{% endif %}">
+                        Пользователи
+                    </a>
+                </li>
+        
+                <!-- Analytics -->
+                <li>
+                    <a href="{{ url_for('analytics') }}" 
+                       class="{% if request.path == '/analytics' %}active{% endif %}">
+                        Аналитика
+                    </a>
+                </li>
+        
+                <!-- Monitoring -->
+                <li>
+                    <a href="{{ url_for('monitoring') }}" 
+                       class="{% if request.path == '/monitoring' %}active{% endif %}">
+                        Мониторинг
+                    </a>
+                </li>
             </ul>
             
             <!-- User Section with three-dot menu -->
@@ -40,7 +61,7 @@
                     <div id="userDropdown" class="dropdown-content">
                         <a href="#">Admin</a>
                         <li class="divider"></li>
-                        <a href="{{ url_for('login') }}">Exit</a>
+                        <a href="{{ url_for('logout') }}">Exit</a>
                     </div>
                 </div>
             </div>
